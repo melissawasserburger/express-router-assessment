@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const controller = require("./urls.controller");
 const methodNotAllowed = require("../errors/methodNotAllowed");
-const usesRouter = require("../uses/uses.router");
+const usesRouter = require("../nestedUses/nestedUses.router");
 
 router.use("/:urlId/uses", controller.urlExists, usesRouter);
 

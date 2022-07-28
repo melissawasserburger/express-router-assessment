@@ -316,7 +316,7 @@ describe("App", () => {
           .set("Accept", "application/json");
 
         expect(response.status).toBe(404);
-        expect(response.body.error).toContain(1);
+        expect(response.body.error).toContain("1");
       });
 
       test("returns 404 and an error key set to a message containing the url id if url id does not exist", async () => {
@@ -333,7 +333,7 @@ describe("App", () => {
           .set("Accept", "application/json");
 
         expect(response.status).toBe(404);
-        expect(response.body.error).toContain(72);
+        expect(response.body.error).toContain("72");
       });
 
       test("for a mismatched short url and use ids, returns a 404 status code and an error key set to a message containing the use id", async () => {

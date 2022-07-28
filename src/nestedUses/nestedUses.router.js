@@ -1,9 +1,8 @@
-const router = require("express").Router();
-const controller = require("./uses.controller");
+const router = require("express").Router({mergeParams: true});
+const controller = require("./nestedUses.controller");
 const methodNotAllowed = require("../errors/methodNotAllowed");
 
-
-// root path = /uses
+// root path = "/urls/:urlId/uses"
 router.route("/").get(controller.list).all(methodNotAllowed);
 router.route("/:useId").get(controller.read).delete(controller.delete).all(methodNotAllowed);
 
